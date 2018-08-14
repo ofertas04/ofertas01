@@ -1,0 +1,11 @@
+<div>
+    <h1><a href="/">Ofertas</a></h1>
+</div>
+
+{% for oferta in ofertas %}
+    <div>        
+        <h1>{{ oferta.descricao }}</h1>
+        <p>publicado em: {{ oferta.data_publicacao }}</p>
+        <p><a href="">{{ oferta.link|linebreaksbr }}</a></p>
+    </div>
+{% endfor %}
