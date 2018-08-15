@@ -1,0 +1,80 @@
+{% extends 'site_1/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div id="content">
+    <!-- Mission Statement -->
+    <div class="mission text-center block block-pd-sm block-bg-noise">
+      <div class="container">
+        <h2 class="text-shadow-white">
+            Aqui está as ofertas para você! Basta um clique e você será redirecionado para o site de nosso parceiro.
+          </h2>
+      </div>
+    </div>
+    <!-- Services -->
+    <div class="services block block-bg-gradient block-border-bottom">
+      <div class="container">  
+        <div class="row">
+          <form class="navbar-form navbar-left" id="searchform" action="" method="get" accept-charset="utf-8">                  
+              <input class="form-control" id="searchbox" name="q" type="text" placeholder="Coloque o código do produto">
+              <button class="form-control" type="submit">
+                <i class="fa fa-search"></i>
+              </button>
+          </form>
+          <hr style="border-color:#ff5821; box-sizing:border-box; width:100%;">   
+        </div>            
+        <div class="row">
+          {% for oferta in ofertas %}
+            <div class="col-md-4 text-center" style="box-shadow: 5px 5px 5px rgba(0,0,0,0.5); margin-top: 7px;">
+              <span class="fa-stack fa-5x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-group fa-stack-1x fa-inverse"></i> </span>
+              <h4 class="text-weight-strong">
+                  {{ oferta.descricao }}
+              </h4>
+              <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+              <p>
+                <a href="{{ oferta.link }}" class="btn btn-more i-right">Comprar! <i class="fa fa-angle-right"></i></a>
+              </p>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="block block-pd-sm block-bg-grey-dark block-bg-overlay block-bg-overlay-6 text-center" data-block-bg-img="https://picjumbo.imgix.net/HNCK1088.jpg?q=40&amp;w=1650&amp;sharp=30" data-stellar-background-ratio="0.3">
+      <h2 class="h-xlg h1 m-a-0">
+          <span data-counter-up>100,000,0</span>s
+        </h2>
+      <h3 class="h-lg m-t-0 m-b-lg">
+          Of Happy Customers!
+        </h3>
+      <p>
+        <a href="#" class="btn btn-more btn-lg i-right">Join them today! <i class="fa fa-angle-right"></i></a>
+      </p>
+    </div>
+    
+    
+  </div>
+  <!-- /content -->
+  <!-- Call out block -->
+  <div class="block block-pd-sm block-bg-primary">
+    <div class="container">
+      <div class="row">
+        <h3 class="col-md-4">
+            Alguns de nossos Parceiros
+          </h3>
+        <div class="col-md-8">
+          <div class="row">
+            <!--Client logos should be within a 120px wide by 60px height image canvas-->
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 1">
+                  <img src="{% static 'img/clients/client1.png' %}" alt="Client 1 logo" class="img-responsive">
+                </a>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
