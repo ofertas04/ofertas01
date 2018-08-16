@@ -1,24 +1,23 @@
 {% load staticfiles %}
-
 <!DOCTYPE html>
 <html lang="pt">
 
 <head>
   <meta charset="utf-8">
-  <title>Ofertas Já!</title>
+  <title>Ofertas Já - Seu site de ofertas!</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
 
-
-  <!-- Fav and touch icons -->
+  <link rel="shortcut icon" type="image/png" href="{% static 'img/icon.png' %}"/>
+  <!-- Fav and touch icons 
   <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'img/icons/114x114.png' %}">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'img/icons/72x72.png' %}">
-  <link rel="apple-touch-icon-precomposed" href="{% static 'img/icons/default.png' %}">
+  <link rel="apple-touch-icon-precomposed" href="{% static 'img/icons/default.png' %}">-->
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet">
+  <!-- Google Fonts 
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet">-->
 
   <!-- Bootstrap CSS File -->
   <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -30,7 +29,7 @@
   <link href="{% static 'lib/owlcarousel/owl.transitions.min.css' %}" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'css/stile.css' %}" rel="stylesheet">
 
   <!--Your custom colour override - predefined colours are: colour-blue.css, colour-green.css, colour-lavander.css, orange is default-->
 
@@ -50,18 +49,15 @@
     <div id="navigation" class="wrapper">
       <div class="header">
         <div class="header-inner container">
-          <div class="row">
-            <div class="col-md-8">
+          <div class="row">            
+            <div class="col-md-2">
               <!--navbar-branding/logo - hidden image tag & site name so things like Facebook to pick up, actual logo set via CSS for flexibility -->
-              <a class="navbar-brand" href="" title="Home">
-                <h1 class="hidden">
-                    <img src="{% static 'img/logo.png' %}" class="img-responsive">
-                    Ofertas Já
-                  </h1>
-              </a>
-              <div class="navbar-slogan">
-                Divulgamos ofertas para você todos os dias!                
+              <div>
+                <a href="{% url 'index' %}">
+                  <img src="{% static 'img/logo_.png' %}" class="img-responsive">
+                </a>
               </div>
+              
             </div>
             <!--header rightside-->
             <div class="col-md-4">
@@ -83,10 +79,10 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav" id="main-menu">
               <li class="icon-link">
-                <a href="index.html"><i class="fa fa-home"></i></a>
+                <a href="{% url 'index' %}"><i class="fa fa-home"></i></a>
               </li>
-              <li><a href="#">Quem Somos?</a></li>
-              <li><a href="#">Anuncie seu produto!</a></li> 
+              <li><a href="{% url 'quem_somos' %}">Quem Somos?</a></li>
+              <li><a href="{% url 'anuncie' %}">Anuncie seu produto!</a></li> 
             </ul>            
           </div>
           <!--/.navbar-collapse -->            
@@ -108,7 +104,6 @@
     <div class="container">
 
       <div class="row" id="contact">
-
         <!--
         <div class="col-md-3">
           <address>
@@ -122,36 +117,7 @@
               <br>
             </address>
         </div>
-    -->
-        <div class="col-md-6">
-          <h4 class="text-uppercase">
-              Entre em contato!
-            </h4>
-          <div class="form">
-            <div id="sendmessage">Sua mensagem foi enviada. Obrigado!</div>
-            <div id="errormessage"></div>
-            <form action="" method="post" role="form" class="contactForm">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Seu nome" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Seu email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensagem"></textarea>
-                <div class="validation"></div>
-              </div>
-              <div class="text-center"><button type="submit">Enviar</button></div>
-            </form>
-          </div>
-        </div>
-
+    -->       
         <div class="col-md-3">
           <h4 class="text-uppercase">
               Receba ofertas na sua rede social:
