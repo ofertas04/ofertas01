@@ -3,9 +3,9 @@ from django.utils import timezone
 from .models import Produto
 from .filtrar import ProdutoFilter
 
-def listar_ofertas(request):
-	ofertas = Produto.objects.filter(data_publicacao__lte=timezone.now()).order_by('data_publicacao')
-	return render(request, 'site_1/index.html', {'ofertas': ofertas})
+#def atualizar(request):
+#	ofertas = Produto.objects.filter(data_publicacao__lte=timezone.now()).order_by('data_publicacao')
+#	return render(request, 'site_1/ofertas.html', {'ofertas': ofertas})
 
 def quem_somos(request):
 	ofertas = Produto.objects.filter(data_publicacao__lte=timezone.now()).order_by('data_publicacao')

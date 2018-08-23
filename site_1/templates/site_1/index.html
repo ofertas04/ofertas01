@@ -2,6 +2,9 @@
 {% load staticfiles %}
 {% block content %}
 
+
+       <!--<meta http-equiv="refresh" content="20">-->
+     
 <div id="content">
     <!-- Mission Statement -->
     <div class="mission text-center block block-pd-sm block-bg-noise">
@@ -11,19 +14,26 @@
           </h2>
       </div>
     </div>
+
+    <!--<script>
+      function atualizar(){
+      $.ajax({
+             url: "{% url 'index' %}",
+              success: function(data){
+                /*alert('teste');*/
+                $('#the-div-that-should-be-refreshed').html(data);
+             }
+         });
+      }
+      setInterval(atualizar, 5000);
+    </script>-->
     <!-- Services -->
     <div class="services block block-bg-gradient block-border-bottom">
       <div class="container">  
-        <div class="row">
-          <form class="navbar-form navbar-left" method="get">                  
-              <input class="form-control" type="text" id="id_codigo_acesso" name="codigo_acesso" placeholder="Codigo!">
-              <button class="form-control" type="submit">
-                <i class="fa fa-search"></i>
-              </button>
-          </form>
+        <div class="row">          
           <hr style="border-color:#fe0406; box-sizing:border-box; width:100%;">   
         </div>           
-        <div class="row">
+        <div class="row" id="atualizar">
           {% for oferta in oferta_select.qs %}
             <div class="col-md-4 text-center" style="box-shadow: 5px 5px 5px rgba(0,0,0,0.5); margin-top: 7px;">
 
@@ -44,14 +54,7 @@
             {% endfor %}
         </div>
       </div>
-    </div>
-    <div class="block block-pd-sm block-bg-grey-dark block-bg-overlay block-bg-overlay-6 text-center" data-block-bg-img="" data-stellar-background-ratio="0.3">
-      <h2 class="h-xlg h1 m-a-0">
-          <span data-counter-up>100,000,0</span>s
-        </h2>
-    </div>
-    
-    
+    </div>   
   </div>
   <!-- /content -->
   <!-- Call out block -->

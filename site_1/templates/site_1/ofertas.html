@@ -1,0 +1,18 @@
+{% for oferta in oferta_select.qs %}
+            <div class="col-md-4 text-center" style="box-shadow: 5px 5px 5px rgba(0,0,0,0.5); margin-top: 7px;">
+
+              <span class="fa-stack fa-5x">
+                {%  if oferta.img  %}
+                <a href="{{ oferta.link }}" target="_blank">
+                <img style="display: block; margin-left: auto; margin-right: auto; width: 80%; margin-top: 20px;" src="{{ oferta.img.url }}" class="img-responsive underlay"></a>
+                {% endif %}
+              </span>
+              <h4 class="text-weight-strong">
+                  {{ oferta.descricao }}
+              </h4>
+              <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+              <p>
+                <a href="{{ oferta.link }}" class="btn btn-more i-right" target=“_blank”>Comprar!<i class="fa fa-angle-right"></i></a>
+              </p>
+            </div>
+            {% endfor %}
